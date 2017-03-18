@@ -1,0 +1,33 @@
+.painting
+  text-align: center
+  padding: 3em 0 2em 0
+  min-height: 100vh
+  border-bottom: 2px solid rgba(0, 0, 0, 0.2)
+
+  &__image
+    box-shadow: 0 10px 45px rgba(0, 0, 0, 0.3)
+    height: calc(100vh - 4em)
+
+  &__content
+    padding: 0 1em
+    max-width: $painting-info-width
+    margin: 2em auto 0
+    border-top: 1px solid rgba(0,0,0,0.1)
+
+    &__title
+      font-size: 3em
+      margin: .5em 0 .25em
+      font-family: 'Marck Script', cursive
+      font-weight: normal
+
+    &__features
+      font-size: .8em
+
+  // Inverse the color
+  &--inverse
+    .painting
+      &__content
+        &__title,
+        &__features,
+        &__description
+          color: white
