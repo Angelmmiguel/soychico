@@ -1,4 +1,4 @@
-// Variables
+// Variables and mixins
 @import "variables"
 
 // Add components
@@ -14,3 +14,9 @@ body
   font-family: 'Open Sans', sans-serif
   font-size: 1em
   line-height: 1.414
+
+.clearfix
+  &:after
+    content: ''
+    display: table
+    clear: both

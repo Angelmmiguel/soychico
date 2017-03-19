@@ -5,7 +5,8 @@ var gulp = require('gulp'),
   imagemin = require('gulp-imagemin'),
   responsive = require('gulp-responsive'),
   ejs = require("gulp-ejs"),
-  imageminWebp = require('imagemin-webp');
+  imageminWebp = require('imagemin-webp'),
+  ghPages = require('gulp-gh-pages');
 
 // Compile views
 gulp.task('views', function() {
@@ -31,6 +32,19 @@ gulp.task('svg', function() {
 // Optimize Images
 gulp.task('jpg', function() {
   return gulp.src('./images/*.jpg')
+    .pipe(responsive({
+      '*.jpg': [
+        {
+          width: 1200
+        },
+        {
+          width: 300,
+          rename: {
+            suffix: '-thumb'
+          }
+        }
+      ]
+    }))
     .pipe(imagemin([
       imagemin.gifsicle(),
       imageminWebp({
@@ -50,15 +64,36 @@ gulp.task('static', function() {
     './favicon.png',
     './CNAME'
   ]).pipe(gulp.dest('./dist'));
-})
+});
+
+// JS
+gulp.task('js', function() {
+  return gulp.src([
+    './js/*.js'
+  ]).pipe(gulp.dest('./dist'));
+});
+
+// Vendor
+gulp.task('vendor', function() {
+  return gulp.src([
+    './vendor/**/'
+  ]).pipe(gulp.dest('./dist/vendor'));
+});
+
+// Publish!
+gulp.task('publish', ['dist'], function() {
+  return gulp.src('./dist/**/')
+    .pipe(ghPages());
+});
 
 // Compile all assets
-gulp.task('dist', ['views', 'sass', 'jpg', 'svg'], function() { });
+gulp.task('dist', ['views', 'sass', 'js', 'jpg', 'svg', 'static', 'vendor'], function() { });
 
 // Default
 gulp.task('default', ['dist'], function() {
   gulp.watch(['sass/*.sass', 'sass/**/*.sass'] , ['sass']);
   gulp.watch(['views/*.ejs', 'views/**/*.ejs'] , ['views']);
+  gulp.watch('js/*.js' , ['js']);
   gulp.watch('images/*.jpg' , ['jpg']);
   gulp.watch('images/*.svg' , ['svg']);
 });

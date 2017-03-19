@@ -1,15 +1,56 @@
 <%- include('partials/_head'); %>
 <body>
   <%- include('partials/_header'); %>
+  <%- include('partials/_photoswipe'); %>
   <main>
-    <article class="painting painting--inverse" style="background-color: #b54f4d">
+    <article class="painting painting--inverse">
       <div class="container">
-        <img class="painting__image" alt="Pagoda japonesa" src="/images/pagoda-japonesa.jpg"/>
+        <section class="painting__gallery" itemscope itemtype="http://schema.org/ImageGallery">
+          <figure class="painting__gallery__main" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+            <a href="/images/pagoda-japonesa.jpg" itemprop="contentUrl">
+              <img src="/images/pagoda-japonesa.jpg" itemprop="thumbnail" alt="Image description" />
+            </a>
+            <!-- Almacenamiento del tamano de la imagen -->
+            <meta itemprop="width" content="1200">
+            <meta itemprop="height" content="799">
+          </figure>
+          <section class="painting__gallery__right">
+            <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+              <a href="/images/pagoda-japonesa-1.jpg" itemprop="contentUrl">
+                <img src="/images/pagoda-japonesa-1-thumb.jpg" itemprop="thumbnail" alt="Image description" />
+              </a>
+              <!-- Almacenamiento del tamano de la imagen -->
+              <meta itemprop="width" content="1200">
+              <meta itemprop="height" content="799">
+            </figure>
+            <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+              <a href="/images/pagoda-japonesa-2.jpg" itemprop="contentUrl">
+                <img src="/images/pagoda-japonesa-2-thumb.jpg" itemprop="thumbnail" alt="Image description" />
+              </a>
+              <!-- Almacenamiento del tamano de la imagen -->
+              <meta itemprop="width" content="1200">
+              <meta itemprop="height" content="799">
+            </figure>
+          </section>
+        </section>
+        <section class="painting__features">
+          <table>
+            <tr>
+              <td>Pintura</td>
+              <td>Óleo</td>
+            </tr>
+            <tr>
+              <td>Tamaño</td>
+              <td>75x50cm</td>
+            </tr>
+            <tr>
+              <td>Año</td>
+              <td>2016</td>
+            </tr>
+          </table>
+        </section>
         <section class="painting__content">
           <h1 class="painting__content__title">Pagoda japonesa</h1>
-          <p class="painting__content__features">
-            Óleo - 75x40cm
-          </p>
           <p class="painting__content__description">
             Paisaje japonés con una pagoda (pequeño templo). En el fondo
             tenemos una montaña nevada que contrasta con las flores del campo
@@ -18,18 +59,59 @@
         </section>
       </div>
     </article>
-    <article class="painting" style="background-color: #dde4f3">
+
+    <article class="painting painting--inverse">
       <div class="container">
-        <img class="painting__image" alt="Rosa" src="/images/rosa.jpg"/>
+        <section class="painting__gallery" itemscope itemtype="http://schema.org/ImageGallery">
+          <figure class="painting__gallery__main" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+            <a href="/images/rosa.jpg" itemprop="contentUrl">
+              <img src="/images/rosa.jpg" itemprop="thumbnail" alt="Image description" />
+            </a>
+            <!-- Almacenamiento del tamano de la imagen -->
+            <meta itemprop="width" content="1200">
+            <meta itemprop="height" content="799">
+          </figure>
+          <section class="painting__gallery__right">
+            <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+              <a href="/images/rosa-1.jpg" itemprop="contentUrl">
+                <img src="/images/rosa-1-thumb.jpg" itemprop="thumbnail" alt="Image description" />
+              </a>
+              <!-- Almacenamiento del tamano de la imagen -->
+              <meta itemprop="width" content="1200">
+              <meta itemprop="height" content="799">
+            </figure>
+            <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+              <a href="/images/rosa-2.jpg" itemprop="contentUrl">
+                <img src="/images/rosa-2-thumb.jpg" itemprop="thumbnail" alt="Image description" />
+              </a>
+              <!-- Almacenamiento del tamano de la imagen -->
+              <meta itemprop="width" content="1200">
+              <meta itemprop="height" content="799">
+            </figure>
+          </section>
+        </section>
+        <section class="painting__features">
+          <table>
+            <tr>
+              <td>Pintura</td>
+              <td>Óleo</td>
+            </tr>
+            <tr>
+              <td>Tamaño</td>
+              <td>20x30cm</td>
+            </tr>
+            <tr>
+              <td>Año</td>
+              <td>2016</td>
+            </tr>
+          </table>
+        </section>
         <section class="painting__content">
           <h1 class="painting__content__title">Rosa</h1>
-          <p class="painting__content__features">
-            Óleo - 30x25cm
-          </p>
           <p class="painting__content__description">
-            Paisaje japonés con una pagoda (pequeño templo). En el fondo
-            tenemos una montaña nevada que contrasta con las flores del campo
-            que tenemos delante.
+            Rosa roja. Sin duda, lo que más me gusta de este cuadro es el
+            color rojo intenso de la flor. El fondo es un azul manchado que
+            degrada a blanco en la parte superior.
           </p>
         </section>
       </div>
@@ -37,3 +119,4 @@
   </main>
   <%- include('partials/_footer'); %>
 </body>
+<script src="/index.js"></script>
