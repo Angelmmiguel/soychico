@@ -1,0 +1,85 @@
+.container {
+  max-width: 1000px;
+  margin: 0 auto; }
+
+footer .footer__content {
+  padding: 2em 0;
+  width: 70%;
+  border-top: 1px solid #eee;
+  font-size: .8em; }
+
+.header {
+  text-align: center;
+  height: 60px;
+  padding: 2em 0; }
+  .header img {
+    height: 60px; }
+
+.painting .container {
+  position: relative; }
+
+.painting img {
+  max-width: 100%; }
+
+.painting__gallery figure {
+  margin: 0;
+  padding: 0; }
+
+.painting__gallery__main {
+  width: 80%;
+  border-bottom: 2px solid black;
+  border-right: 2px solid black; }
+
+.painting__gallery__right {
+  width: 18%;
+  position: absolute;
+  top: 0;
+  right: 0; }
+  .painting__gallery__right figure {
+    margin-bottom: 1em; }
+
+.painting__features {
+  width: 30%;
+  float: left;
+  padding-top: 1em; }
+  .painting__features tr td {
+    font-size: .9em; }
+    .painting__features tr td:first-child {
+      font-weight: bold;
+      padding-right: 1em; }
+    .painting__features tr td:last-child {
+      color: #444; }
+
+.painting__content {
+  padding: 3em;
+  background-color: #f8f8f8;
+  float: left;
+  width: 70%;
+  position: relative;
+  top: -4em;
+  z-index: -1;
+  box-sizing: border-box; }
+  .painting__content__title {
+    margin-bottom: .25em;
+    font-size: 3em;
+    font-family: 'Marck Script', cursive;
+    font-weight: normal; }
+  .painting__content__features {
+    font-size: .8em; }
+  .painting__content__description {
+    margin-bottom: 0; }
+
+html {
+  font-size: 100%; }
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1em;
+  line-height: 1.414; }
+
+.clearfix:after, .painting:after {
+  content: '';
+  display: table;
+  clear: both; }
